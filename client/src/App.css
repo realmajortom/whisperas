@@ -1,0 +1,619 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Inter var', sans-serif;
+}
+
+.mainPage {
+  width: calc(100% - 30px);
+  margin: auto;
+  height: calc(100vh - 50px);
+}
+
+h1, h2 {
+  font-family: 'Metropolis', serif;
+}
+
+h1 {
+  padding: 10px 0 0 0;
+}
+
+#welcomeh1 {
+  margin: 0;
+}
+
+#welcomeHead, #instructions {
+  font-family: 'Inter var', sans-serif;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+
+
+/**************** Nav Bar ****************/
+.NavBar {
+  position: fixed;
+  width: 100vw;
+  height: 50px;
+  border-top: 1px solid rgb(230, 230, 230);
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+}
+
+.navBtn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.addBtn {
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.addIcn {
+  width: 75px;
+}
+
+circle {
+  fill: #735afe;
+}
+
+circle:active {
+  fill: #5643be;
+}
+
+
+
+/**************** User Page ****************/
+.User {
+  min-height: 450px;
+  padding-bottom: 20px;
+}
+
+.userFormArea {
+  position: relative;
+}
+
+.userFormGroup {
+  margin: 30px 0;
+}
+
+.userField {
+  outline: none;
+  width: 100%;
+  font-size: 14pt;
+  padding: 10px;
+  margin-top: 6px;
+  background: white;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(230, 230, 230);
+  border-radius: 6px;
+  font-family: 'Inter var', sans-serif;
+  font-weight: 300;
+  transition: border-color 250ms;
+}
+
+.userField:focus {
+  border-color: #32E875;
+}
+
+.userFormBtn {
+  outline: none;
+  font-family: "Inter var", sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 11pt;
+  background-color: #32e875;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 2px;
+}
+
+.userFormBtn:hover, .userFormBtn:active {
+  background-color: #2ac262;
+  cursor: pointer;
+}
+
+
+.userFormBtnWrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formSwitch {
+  font-size: 11pt;
+  color: rgba(100, 100, 100, 1);
+  position: fixed;
+  bottom: 120px;
+  left: 15px;
+}
+
+.formSwitch:hover, .formSwitch:active {
+  color: #735afe;
+  cursor: pointer;
+}
+
+.logoutBtn {
+  background-color: #d81159;
+}
+
+.logoutBtn:hover, logoutBtn:active {
+  background-color: #b20e4a;
+}
+
+
+
+/**************** Entry Page ****************/
+.EntryPage {
+    width: 100vw;
+    height: calc(100vh - 50px);
+    /* margin-left: -15px; */
+}
+
+.entryForm {
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+}
+
+.entryCard {
+  min-width: calc(100vw - 60px);
+  height: calc(100vh - 130px);
+  margin: 15px;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.20);
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  transition: border-color 300ms ease 0ms;
+}
+
+.entryHeader {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.entryCardMsg {
+  white-space: pre-wrap;
+  text-align: center;
+  margin: 16vh 0;
+  font-size: 18px;
+}
+
+
+/********* Card0 + 1 **********/
+.emojiContainer {
+  height: 100px;
+  width: calc(100vw - 60px);
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  position: fixed;
+  bottom: 20vh;
+}
+
+.Emoji {
+  cursor: pointer;
+  width: 13vw;
+  filter: grayscale(100%) opacity(.5);
+  -webkit-tap-highlight-color: transparent;
+  transition-property: width;
+  transition-duration: 150ms;
+}
+
+.Emoji_selected {
+  width: 20vw;
+  filter: none;
+}
+
+
+/********* Card2 + Card3 + Card4 **********/
+
+.Checklist {
+  height: calc(100vh - 215px);
+  overflow: scroll;
+  margin-top: 10px;
+  padding-left: 5px;
+}
+
+.checkCard .ant-checkbox-wrapper {
+  font-family: 'Inter var', sans-serif;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.checkCard .thomasCheckGroup {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.customCheckCont{
+  padding-bottom: 50px;
+  margin-top: 10px;
+}
+
+.customCheckInput {
+  font-family: 'Inter var', sans-serif;
+  font-size: 18px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(230, 230, 230);
+  border-radius: 6px;
+  padding: 2px 6px;
+  margin-left: 8px;
+  outline: none;
+  transition: border-color 300ms ease 0ms;
+}
+
+.customCheckInput:focus {
+  border-color: #1890ff;
+}
+
+
+/********* Card5 **********/
+
+.entryCardSub {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+#entryTextArea {
+  outline: none;
+  width: 100%;
+  height: 45%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(230,230,230);
+  border-radius: 6px;
+  font-size: 16px;
+  padding: 8px;
+  font-family: 'Inter var', sans-serif;
+  font-weight: 300;
+}
+
+#hiddenBtn {
+  z-index: 100;
+  background-color: transparent;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  margin-bottom: 12px;
+  position: fixed;
+  bottom: 0;
+  left: calc(50vw - 30px);
+  display: none;
+}
+
+
+
+/**************** Home Page ****************/
+
+.homeBtnWrap {
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.homeBtn {
+  width: 30vw;
+  text-align: center;
+  background-color: #32e875;
+}
+
+.homeBtn:active, .homeBtn:hover {
+  background-color: #2ac262;
+}
+
+.LinkBubble {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.20);
+  border-radius: 6px;
+  padding: 20px 15px;
+  margin: 15px 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.LinkBubble:hover, .LinkBubble:focus, .LinkBubble:active {
+  box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.20);
+}
+
+.bubbleIcn {
+  width: 40px;
+}
+
+.bubbleTitle {
+  font-family: 'Inter var', sans-serif;
+  font-size: 20px;
+  color: #000;
+  margin: 0 0 0 20px;
+}
+
+.NoUserLinks {
+  height: calc(100vh - 130px);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+
+/**************** History Page ****************/
+
+.histScrollCont {
+  padding-bottom: 120px;
+}
+
+.HistoryTile {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.20);
+  border-radius: 6px;
+  padding: 20px 15px;
+  margin: 15px 0;
+  transition: min-height 150ms ease 0ms;
+}
+
+.histTileUpper {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.histDate {
+  font-family: 'Inter var', sans-serif;
+  color: black;
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  font-size: 18px;
+  width: 25vw;
+  white-space: nowrap;
+}
+
+
+.p {
+  margin: 0;
+  font-family: 'Inter var', sans-serif;
+}
+
+.histMoji {
+  width: 36px;
+}
+
+.histMiniCont {
+  width: 100%;
+  padding: 20px 10px;
+  margin: 15px 0;
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 6px;
+}
+
+.scrCont {
+  display: flex;
+  flex-flow: row column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.scrTile {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  max-width: 40vw;
+  border: 1px solid rgb(230, 230, 230);
+}
+
+.histP {
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.histMiniHeader {
+  font-family: 'Inter var', sans-serif;
+  color: black;
+  font-weight: 500;
+  margin: 0 15px 0 0;
+  padding: 0;
+}
+
+.histList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.histList li, .commentP {
+  margin: 8px 2px;
+  font-family: 'Inter var', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+
+
+/**************** Trends Page ****************/
+.Trends {
+  overflow: hidden;
+}
+.trendHeader {
+  padding-bottom: 0;
+}
+
+.periodBtns {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.PeriodBtn {
+  font-family: 'Inter var', sans-serif;
+  outline: none;
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 100px;
+  background-color: rgb(250, 250, 250);
+  width: 20vw;
+  padding: 4px 0;
+  transition: background-color 150ms ease 0ms;
+}
+
+.scrTiles {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Trends .scrTile {
+  max-width: 47%;
+}
+
+.trendTile {
+  border: 1px solid rgb(230, 230, 230);
+  box-shadow: none;
+}
+
+.trendMsgCont {
+  height: 80%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.trendMsg {
+  font-family: 'Inter var';
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.trendHeaderCont {
+  display: flex;
+  align-items: baseline;
+}
+
+.infoBtn {
+  border: none;
+  background-color: transparent;
+  color: none;
+  outline: none;
+  margin-left: 15px;
+}
+
+.trendsScrollCont {
+  height: calc(100vh - 61px);
+  overflow: scroll;
+  padding-bottom: 120px;
+}
+
+/**************** Prefs Page ****************/
+
+.mini {
+  margin: 15px 0;
+}
+
+.prefsTile {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20);
+  border-radius: 6px;
+  padding: 20px 15px;
+  margin: 25px 0;
+  transition: min-height 150ms ease 0ms;
+}
+
+.tileExp {
+  box-shadow: 0 12px 17px 2px rgba(0,0,0,0.14), 0 5px 22px 4px rgba(0,0,0,0.12), 0 7px 8px -4px rgba(0,0,0,0.20);
+}
+
+.prefH2 {
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter var', sans-serif;
+}
+
+.Modal p {
+  font-family: 'Inter var', sans-serif;
+  font-size: 14px;
+  color: rgb(10,10,10);
+  margin-left: -38px;
+  white-space: prewrap;
+}
+
+.Modal p:first-of-type {
+  margin-top: 20px;
+}
+
+.prefsFoot {
+    margin-bottom: 40px;
+    height: 100px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+.prefsLink {
+  font-size: 11pt;
+  color: rgba(100, 100, 100, 1);
+}
+
+.prefsTitle {
+  margin: 0;
+}
+
+.Prefs {
+  height: calc(100vh - 130px);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+
+
+/**************** Resources Page ****************/
+
+.resourceMsg {
+  font-family: 'Inter-var', sans-serif;
+  white-space: pre-wrap;
+  font-size: 18px;
+}
+
+.rscTitle {
+  margin: 0;
+}
+
+.rscSubTitle {
+  padding: 0;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+
+.footWrapHome {
+  position: absolute;
+  bottom: 80px;
+}

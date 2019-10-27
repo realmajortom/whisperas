@@ -1,0 +1,16 @@
+{
+  "name": "cadence",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/tggir1/cadence.git",
+  "author": "Thomas Girgenti <thomasg@disroot.org>",
+  "license": "MIT",
+  "scripts": {
+    "start": "concurrently \"cd backend && nodemon server\" \"cd client && yarn start\""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^5.0.0",
+    "eslint-plugin-react": "^7.16.0"
+  }
+}
