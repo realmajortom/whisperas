@@ -47,7 +47,7 @@ router.post('/register', (req, res) => {
 
 									const token = jwt.sign({
 										sub: user._id,
-									}, process.env.SECRET, {expiresIn: '30d'});
+									}, process.env.JWT_SECRET, {expiresIn: '30d'});
 
 									res.json({token: token, prefname: user.prefname, success: true});
 
@@ -85,7 +85,7 @@ router.post('/login', (req, res) => {
 
 						const token = jwt.sign({
 							sub: user._id,
-						}, process.env.SECRET, {expiresIn: '30d'});
+						}, process.env.JWT_SECRET, {expiresIn: '30d'});
 
 						res.json({token: token, prefname: user.prefname, success: true});
 					}

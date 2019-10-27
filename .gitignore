@@ -1,12 +1,10 @@
 .DS_Store
-
 .idea/
-
 .vscode/
-
 .code-workspace.code-workspace
 
 
+app.yaml
 node_modules
-
 .env
+.gcloudignore

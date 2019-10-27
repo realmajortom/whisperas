@@ -21,7 +21,7 @@ export default function Prefs(props) {
   const updateUsername = (e) => {
     e.preventDefault();
 
-    axios.post('http://192.168.1.111:8080/user/update-un',
+    axios.post('https://whisperas.appspot.com/api/user/update-un',
       {username: user1, newUsername: newUser, pass: pass1})
       .then(res => {
         if (res.data.success) {
@@ -40,7 +40,7 @@ export default function Prefs(props) {
   const updatePrefName = (e) => {
     e.preventDefault();
 
-    axios.post('http://192.168.1.111:8080/user/update-pn',
+    axios.post('https://whisperas.appspot.com/api/user/update-pn',
       {username: user2, newPrefname: newPref, pass: pass2})
       .then(res => {
         if (res.data.success) {
@@ -60,7 +60,7 @@ export default function Prefs(props) {
   const updatePass = (e) => {
     e.preventDefault();
 
-    axios.post('http://192.168.1.111:8080/user/update-pass',
+    axios.post('https://whisperas.appspot.com/api/user/update-pass',
       {username: user3, newPass: newPass, pass: pass3})
       .then(res => {
         if (res.data.success) {

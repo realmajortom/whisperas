@@ -84,11 +84,4 @@ router.post('/delete/:id', (req, res) => {
 	})(req, res);
 });
 
-
-// Get all journals
-router.get('/all', (req, res) => {
-	Journal.find({}, (err, docs) => {res.json(docs)});
-});
-
-
 module.exports = router;

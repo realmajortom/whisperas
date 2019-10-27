@@ -1,16 +1,24 @@
 {
-  "name": "cadence",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/tggir1/cadence.git",
-  "author": "Thomas Girgenti <thomasg@disroot.org>",
+  "name": "whisperas",
+  "version": "1.0.1",
+  "main": "app.js",
+  "repository": "https://github.com/tggir1/cadence/tree/master/backend",
+  "author": "Thomas Girgenti (tggir1)",
   "license": "MIT",
+  "private": true,
   "scripts": {
-    "start": "concurrently \"cd backend && nodemon server\" \"cd client && yarn start\""
+    "start": "node app.js"
   },
-  "dependencies": {},
-  "devDependencies": {
-    "concurrently": "^5.0.0",
-    "eslint-plugin-react": "^7.16.0"
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "helmet": "^3.21.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.3",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0"
   }
 }

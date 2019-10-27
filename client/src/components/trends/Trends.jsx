@@ -26,7 +26,7 @@ export default function Trends() {
   useEffect(() => {
 
     if (token !== null) {
-      axios.get('http://192.168.1.111:8080/journal/my-entries',
+      axios.get('https://whisperas.appspot.com/api/journal/my-entries',
         {headers: {Authorization: `JWT ${token}`}})
         .then(res => {
           if (res.data.success) {

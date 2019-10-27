@@ -39,7 +39,7 @@ export default function HistoryTile(props) {
 
   const handleDelete = () => {
     const token = localStorage.getItem('token');
-    axios.post(`http://192.168.1.111:8080/journal/delete/${d._id}`,
+    axios.post(`https://whisperas.appspot.com/api/journal/delete/${d._id}`,
       {},
       {headers: {Authorization: `JWT ${token}`}})
       .then(res => {

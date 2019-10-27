@@ -5,7 +5,7 @@ const ExtractJwt = require('passport-jwt').ExtractJwt;
 const User = require('./models/userModel');
 
 const opts = {
-	secretOrKey: process.env.SECRET,
+	secretOrKey: process.env.JWT_SECRET,
 	jwtFromRequest: ExtractJwt.fromAuthHeaderWithScheme('JWT'),
 	jsonWebTokenOptions: {
 		maxAge: '30d'

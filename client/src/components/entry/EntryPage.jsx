@@ -31,7 +31,7 @@ export default function EntryPage(props) {
   const updateIndex = i => {
     props.setIndex(i);
   };
-  
+
 
   const clearAll = () => {
     setWins([]);
@@ -57,7 +57,7 @@ export default function EntryPage(props) {
     const day = today.getDay();
 
     if (token !== null) {
-      axios.post('http://192.168.1.111:8080/journal/submit', {
+      axios.post('https://whisperas.appspot.com/api/journal/submit', {
         dmy: `${date}-${month}-${year}`,
         date: date,
         month: month,
@@ -70,7 +70,7 @@ export default function EntryPage(props) {
         treatChanges: treatChanges,
         comment: comment
       },
-      {headers: {Authorization: `JWT ${token}`}})
+        {headers: {Authorization: `JWT ${token}`}})
         .then(res => {
           if (res.data.success || res.data.code === 1) {
             message.success(res.data.message);
