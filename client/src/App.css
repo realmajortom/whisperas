@@ -411,7 +411,7 @@ circle:active {
 
 .scrCont {
   display: flex;
-  flex-flow: row column;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
 }

@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 
 
 // Serve index file
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static('build'));
 
 
 // Security stuff
@@ -48,7 +48,9 @@ app.use('/api/journal', journalRoutes);
 
 
 // Catch all -- redirect to homepage
-app.get('/*', function(req, res) {res.sendFile(path.join(__dirname, 'build', 'index.html'))});
+app.get('/*', function(req, res) {
+	res.sendFile('build', 'index.html');
+});
 
 
 app.listen(API_PORT, () => console.log(`Listening on port: ${API_PORT}`));
