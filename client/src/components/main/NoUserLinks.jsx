@@ -1,7 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Footer from '../user/Footer';
-
 
 export default function NoUserLinks() {
 
@@ -22,8 +20,8 @@ export default function NoUserLinks() {
         </div>
       </div>
 
+      <div></div>
 
-      <Footer />
     </div>
 
   );

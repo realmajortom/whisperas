@@ -5,10 +5,6 @@ import Login from './Login';
 import Reg from './Reg';
 import Prefs from './Prefs';
 
-const switchPos = {
-  top: `${window.innerHeight - 170}px`
-};
-
 export default function User() {
 
 
@@ -110,7 +106,6 @@ export default function User() {
             setUsername={setUserLog}
             setPass={setPassLog}
             btn={handleLogin}
-            pos={switchPos}
             setForm={setForm}
           />
           : form === 'register'
@@ -119,11 +114,10 @@ export default function User() {
               setPass={setPassReg}
               setPrefname={setPrefname}
               btn={handleReg}
-              pos={switchPos}
               setForm={setForm}
             />
             : form === 'prefs'
-              ? <Prefs logout={logout} pos={switchPos} />
+              ? <Prefs logout={logout} />
               : (<div></div>)
         }
       </div>

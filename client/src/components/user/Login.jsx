@@ -1,6 +1,10 @@
 import React from 'react';
+import Footer from './Footer';
 
 export default function Login(props) {
+
+  let small = window.matchMedia(`(min-height:${window.height - 30}px`).matches;
+
   return (
 
     <div className='userFormArea'>
@@ -23,9 +27,12 @@ export default function Login(props) {
 
       </form>
 
-      <p className='formSwitch' style={props.pos} onClick={() => props.setForm('register')}>
-        New user? Click here to register!
-      </p>
+      <div className='footWrapUser' style={small ? {display: 'none'} : {}}>
+        <p className='formSwitch' onClick={() => props.setForm('register')}>
+          New user? Click here to register!</p>
+
+        <Footer />
+      </div>
 
     </div>
   );

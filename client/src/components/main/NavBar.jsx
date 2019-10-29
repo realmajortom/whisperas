@@ -2,9 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import {MorphIcon} from 'react-svg-buttons';
 
-const navStyle = {
-  top: `${window.innerHeight - 50}px`
-};
+
 
 export default function NavBar(props) {
 
@@ -12,6 +10,10 @@ export default function NavBar(props) {
   const location = useLocation().pathname;
 
   const [morphType, setMorphType] = useState('plus');
+
+  const navStyle = {
+    top: `${window.innerHeight - 50}px`
+  };
 
 
   useEffect(() => {

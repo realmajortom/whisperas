@@ -1,5 +1,6 @@
 import React from 'react';
 import {Tooltip} from 'antd';
+import Footer from './Footer';
 
 export default function Reg(props) {
   return (
@@ -60,9 +61,12 @@ export default function Reg(props) {
       </form>
 
 
-      <p className='formSwitch' style={props.pos} onClick={() => props.setForm('login')} >
-        Go to Login form!
-      </p>
+      <div className='footWrapUser'>
+        <p className='formSwitch' onClick={() => props.setForm('login')} >
+          Go to Login form!</p>
+
+        <Footer />
+      </div>
 
     </div>
   );
