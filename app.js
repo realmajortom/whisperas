@@ -49,7 +49,7 @@ app.use('/api/journal', journalRoutes);
 
 // Catch all -- redirect to homepage
 app.get('/*', function(req, res) {
-	res.sendFile('build', 'index.html');
+	res.sendFile('/build/index.html');
 });
 
 
