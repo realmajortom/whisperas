@@ -8,7 +8,7 @@ export default function NoUserLinks() {
     <div className='NoUserLinks mainPage'>
 
       <div>
-        <p id='welcomeHead'>Welcome to Cadence!</p>
+        <p id='welcomeHead'>Welcome to Whisperas!</p>
         <p id='instructions'>Please login or register to continue.</p>
       </div>
 
