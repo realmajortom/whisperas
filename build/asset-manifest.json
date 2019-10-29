@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.9a40b1de.chunk.css",
-    "main.js": "/static/js/main.55fcf03e.chunk.js",
-    "main.js.map": "/static/js/main.55fcf03e.chunk.js.map",
+    "main.css": "/static/css/main.250ba5d5.chunk.css",
+    "main.js": "/static/js/main.c444b7db.chunk.js",
+    "main.js.map": "/static/js/main.c444b7db.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.60a2956b.js",
     "runtime-main.js.map": "/static/js/runtime-main.60a2956b.js.map",
     "static/css/2.da381186.chunk.css": "/static/css/2.da381186.chunk.css",
     "static/js/2.96515cf6.chunk.js": "/static/js/2.96515cf6.chunk.js",
     "static/js/2.96515cf6.chunk.js.map": "/static/js/2.96515cf6.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.2eb85b8def6c8b4621416eb6d2514dd2.js": "/precache-manifest.2eb85b8def6c8b4621416eb6d2514dd2.js",
+    "precache-manifest.b272d1a0e8c33ad6bbe7434cca1e24b5.js": "/precache-manifest.b272d1a0e8c33ad6bbe7434cca1e24b5.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.da381186.chunk.css.map": "/static/css/2.da381186.chunk.css.map",
-    "static/css/main.9a40b1de.chunk.css.map": "/static/css/main.9a40b1de.chunk.css.map",
+    "static/css/main.250ba5d5.chunk.css.map": "/static/css/main.250ba5d5.chunk.css.map",
     "static/media/index.css": "/static/media/Metropolis-SemiBold.b89d50b5.woff2",
     "static/media/bad.svg": "/static/media/bad.d10d7dcb.svg",
     "static/media/cal.svg": "/static/media/cal.38c722c0.svg",
@@ -28,7 +28,7 @@
     "static/js/runtime-main.60a2956b.js",
     "static/css/2.da381186.chunk.css",
     "static/js/2.96515cf6.chunk.js",
-    "static/css/main.9a40b1de.chunk.css",
-    "static/js/main.55fcf03e.chunk.js"
+    "static/css/main.250ba5d5.chunk.css",
+    "static/js/main.c444b7db.chunk.js"
   ]
 }

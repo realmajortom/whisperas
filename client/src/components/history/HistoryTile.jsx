@@ -35,6 +35,7 @@ export default function HistoryTile(props) {
 
   const d = props.data;
   const [exp, setExp] = useState(false);
+  const narrow = window.matchMedia('(max-width: 370px)').matches;
 
 
   const handleDelete = () => {
@@ -70,7 +71,7 @@ export default function HistoryTile(props) {
       <div className='histTileUpper'>
 
         <h2 className='histDate'>
-          {exp ? `${dLong[d.day]}, ${d.month}/${d.date}` : `${dShort[d.day]}, ${d.month}/${d.date}`}
+          {exp ? `${dLong[d.day]}, ${d.month}/${d.date}` : narrow ? `${d.month}/${d.date}` : `${dShort[d.day]}, ${d.month}/${d.date}`}
         </h2>
 
         <div className='histCounts' style={exp ? {display: 'none'} : {}}>
@@ -95,7 +96,12 @@ export default function HistoryTile(props) {
             okText='Yes'
             okType='danger'
           >
-            <button onClick={(e) => stopProp(e)}><Icon type='delete' /></button>
+
+            <button
+              onClick={(e) => stopProp(e)}
+              style={{backgroundColor: 'transparent', border: 'none'}}>
+              <Icon type='delete' />
+            </button>
           </Popconfirm>
         </div>
 

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import axios from 'axios';
 import {Icon, message} from 'antd';
 import PeriodBtn from './PeriodBtn';
@@ -13,8 +13,10 @@ export default function Trends() {
 
   const [hist, setHist] = useState([]);
   const [period, setPeriod] = useState(null);
+  const [bestDay, setBestDay] = useState([]);
   const [loaded, setLoaded] = useState(false);
   const [winModes, setWinModes] = useState([]);
+  const [worstDay, setWorstDay] = useState([]);
   const [genScrAvg, setGenScrAvg] = useState(null);
   const [badPeriod, setBadPeriod] = useState(null);
   const [treatModes, setTreatModes] = useState([]);
@@ -73,11 +75,15 @@ export default function Trends() {
 
 
   const getAvg = (h, type, set) => {
+    
     let scrs = [];
+
     for (let i = 0; i < h.length; i++) {
       scrs.push(h[i][type]);
     }
+
     let avg = Math.round(scrs.reduce((a, b) => a += b) / h.length);
+
     set(avg);
   };
 
@@ -110,30 +116,123 @@ export default function Trends() {
         modes.push(el);
         maxCount = modeMap[el];
       }
+
     }
+
     set(modes);
   };
+
+
+  const makeAvgArr = (arr) => {
+    let newArr = [];
+
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i].length > 0) {
+        newArr.push(arr[i].reduce((a, b) => a += b) / arr[i].length);
+      } else {
+        newArr.push(null);
+      }
+    }
+
+    return newArr;
+  }
+
+  const getHighs = (arr) => {
+    const dayTxt = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    let currentHigh = 0;
+    let highDays = [];
+
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] > currentHigh) {
+        currentHigh = arr[i];
+        highDays = [dayTxt[i]];
+      } else if (arr[i] === currentHigh) {
+        highDays.push(dayTxt[i]);
+      }
+    }
+
+    return highDays;
+  }
+
+  const getLows = (arr) => {
+    const dayTxt = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    let currentLow = 8;
+    let lowDays = [];
+
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] !== null && arr[i] < currentLow) {
+        currentLow = arr[i];
+        lowDays = [dayTxt[i]];
+      } else if (arr[i] === currentLow) {
+        lowDays.push(dayTxt[i]);
+      }
+    }
+
+    return lowDays;
+  }
+
+  const checkEqual = (arr1, arr2) => {
+    let equal = true;
+    let i = 0;
+
+    while (i < 7 && equal === true) {
+      if (arr1[i] !== arr2[i]) {
+        equal = false;
+      } else {
+        i++
+      }
+    }
+
+    return equal;
+  }
+
+  const dayCalc = useCallback((h, setBest, setWorst) => {
+    let scrs = [[], [], [], [], [], [], []];
+
+    // Sort scores by day
+    for (let i = 0; i < h.length; i++) {
+      let scrSum = h[i]['genScore'] + h[i]['healthScore'];
+      scrs[h[i]['day']].push(scrSum);
+    }
+
+    let scrAvgs = makeAvgArr(scrs);
+    let scrHighs = getHighs(scrAvgs);
+    let scrLows = getLows(scrAvgs);
+
+    if (checkEqual(scrHighs, scrLows)) {
+      setBest(['Not enough data']);
+      setWorst(['Not enough data']);
+    } else {
+      setBest(scrHighs);
+      setWorst(scrLows);
+    }
+  }, []);
 
 
   useEffect(() => {
     if (badPeriod === false) {
 
       let p = (period === 'all' ? hist.length : period);
-      let histMod = hist.slice(0, p);
+      let specHist = hist.slice(0, p);
 
-      getAvg(histMod, 'genScore', setGenScrAvg);
-      getAvg(histMod, 'healthScore', setHealthScrAvg);
+      getAvg(specHist, 'genScore', setGenScrAvg);
+      getAvg(specHist, 'healthScore', setHealthScrAvg);
 
-      getMode(histMod, 'wins', setWinModes);
-      getMode(histMod, 'setbacks', setSetbackModes);
-      getMode(histMod, 'treatChanges', setTreatModes);
+      getMode(specHist, 'wins', setWinModes);
+      getMode(specHist, 'setbacks', setSetbackModes);
+      getMode(specHist, 'treatChanges', setTreatModes);
+
+      dayCalc(specHist, setBestDay, setWorstDay);
+
     }
-  }, [loaded, badPeriod, hist, period]);
+  }, [loaded, badPeriod, hist, period, dayCalc]);
 
 
   const wins = winModes.map(i => (<li key={`${i}-11`}>{i}</li>));
   const setbacks = setbackModes.map(i => (<li key={`${i}-12`}>{i}</li>));
   const treatChanges = treatModes.map(i => (<li key={`${i}-13`}>{i}</li>));
+  const bestDayList = bestDay.map(i => (<li key={`${i}-14`}>{i}</li>));
+  const worstDayList = worstDay.map(i => (<li key={`${i}-15`}>{i}</li>));
 
 
   return (
@@ -163,6 +262,8 @@ export default function Trends() {
           <ListTile data={wins} title='Wins' trends={true} />
           <ListTile data={setbacks} title='Setbacks' trends={true} />
           <ListTile data={treatChanges} title='Treatment Changes' trends={true} />
+          <ListTile data={bestDayList} title='Best Days' trends={true} />
+          <ListTile data={worstDayList} title='Worst Days' trends={true} />
         </div>
 
         <div className='trendMsgCont' style={badPeriod && loaded ? {} : {display: 'none'}} >
