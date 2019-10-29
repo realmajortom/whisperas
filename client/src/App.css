@@ -76,11 +76,18 @@ circle:active {
 }
 
 .userFormArea {
-  position: relative;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
 }
 
 .userFormGroup {
   margin: 30px 0;
+}
+
+.userFormGroup:first-of-type {
+  margin-top: 0;
 }
 
 .userField {
@@ -109,14 +116,14 @@ circle:active {
   font-weight: 600;
   color: #ffffff;
   font-size: 11pt;
-  background-color: #32e875;
+  background-color: #00d968;
   padding: 14px 20px;
   border: none;
   border-radius: 2px;
 }
 
 .userFormBtn:hover, .userFormBtn:active {
-  background-color: #2ac262;
+  background-color: #00a850;
   cursor: pointer;
 }
 
@@ -131,9 +138,6 @@ circle:active {
 .formSwitch {
   font-size: 11pt;
   color: rgba(100, 100, 100, 1);
-  position: fixed;
-  bottom: 120px;
-  left: 15px;
 }
 
 .formSwitch:hover, .formSwitch:active {
@@ -314,11 +318,11 @@ circle:active {
 .homeBtn {
   width: 30vw;
   text-align: center;
-  background-color: #32e875;
+  background-color: #00d968;
 }
 
 .homeBtn:active, .homeBtn:hover {
-  background-color: #2ac262;
+  background-color: #00a850;
 }
 
 .LinkBubble {
@@ -595,7 +599,9 @@ circle:active {
 
 
 /**************** Resources Page ****************/
+.Resources {
 
+}
 .resourceMsg {
   font-family: 'Inter-var', sans-serif;
   white-space: pre-wrap;
@@ -612,8 +618,38 @@ circle:active {
   color: rgba(0, 0, 0, 0.65);
 }
 
+.rscList {
+  margin-bottom: 100px;
+}
 
 .footWrapHome {
   position: absolute;
   bottom: 80px;
 }
+
+.footWrapUser {
+  margin-bottom: 50px;
+}
+
+@media(max-height: 568px) {
+  .footWrapUser {
+    margin-bottom: 20px;
+  }
+    h1 {
+    font-size: 24px;
+  }
+  .entryHeader, .bubbleTitle {
+    font-size: 18px;
+  }
+  .resourceMsg {
+    font-size: 16px;
+  }
+  .entryCardSub,.customCheckInput, #entryTextArea, .checkCard .ant-checkbox-wrapper {
+    font-size: 14px;
+  }
+  p {
+    font-size: 12px;
+  }
+
+}
+
