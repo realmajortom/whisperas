@@ -1,8 +1,8 @@
 {
   "name": "whisperas",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "app.js",
-  "repository": "https://github.com/tggir1/cadence/tree/master/backend",
+  "repository": "https://github.com/tggir1/whisperas",
   "author": "Thomas Girgenti (tggir1)",
   "license": "MIT",
   "private": true,

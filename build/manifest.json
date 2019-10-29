@@ -1,6 +1,7 @@
 {
   "short_name": "Whisperas",
   "name": "Whisperas: The Pancreas Whisperer",
+  "version": "1.0.2",
   "icons": [
     {
       "src": "favicon.png",
