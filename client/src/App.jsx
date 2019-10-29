@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './App.css';
+import Snapp from './Snapp';
 
 import NavBar from './components/main/NavBar';
 import History from './components/history/History';
@@ -13,32 +14,30 @@ import Home from './components/main/Home';
 
 function App() {
   const [index, setIndex] = useState(0);
+  const mobile = window.matchMedia('(max-width: 768px)').matches;
 
-  return (
-    <Router>
-      <div className='App'>
+  if (mobile) {
+    return (
+      <Router>
+        <div className='App'>
 
-        <Switch>
+          <Switch>
+            <Route exact path="/"> <Home /> </Route>
+            <Route path="/history"> <History /> </Route>
+            <Route path="/trends"> <Trends /> </Route>
+            <Route path='/entry'> <EntryPage index={index} setIndex={setIndex} /> </Route>
+            <Route path='/user' > <User /> </Route>
+            <Route path='/resources'> <Resources /> </Route>
+          </Switch>
 
-          <Route exact path="/"> <Home /> </Route>
+          <NavBar index={index} setIndex={setIndex} />
 
-          <Route path="/history"> <History /> </Route>
-
-          <Route path="/trends"> <Trends /> </Route>
-
-          <Route path='/entry'> <EntryPage index={index} setIndex={setIndex} /> </Route>
-
-          <Route path='/user' > <User /> </Route>
-
-          <Route path='/resources'> <Resources /> </Route>
-
-        </Switch>
-
-        <NavBar index={index} setIndex={setIndex} />
-
-      </div>
-    </Router>
-  );
+        </div>
+      </Router>
+    );
+  } else {
+    return <Snapp />
+  }
 }
 
 export default App;
