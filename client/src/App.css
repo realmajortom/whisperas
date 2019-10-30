@@ -631,7 +631,7 @@ circle:active {
   margin-bottom: 50px;
 }
 
-@media(max-height: 568px) {
+@media(max-width: 359px) {
   .footWrapUser {
     margin-bottom: 20px;
   }
@@ -650,6 +650,4 @@ circle:active {
   p {
     font-size: 12px;
   }
-
 }
-
