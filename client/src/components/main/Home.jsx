@@ -8,7 +8,8 @@ export default function Home() {
   return (
     <div className='welcome mainPage'>
 
-      <h1 id='welcomeh1'>Home</h1>
+      <h1 id='welcomeh1'>Whisperas</h1>
+      <h2>The Pancreas Whisperer</h2>
 
       {token ? <Links /> : <NoUserLinks />}
 
