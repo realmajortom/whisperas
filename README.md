@@ -23,4 +23,4 @@ Whisperas is built from the ground-up to ensure user privacy and security. The t
 - The card box-shadow css is from this great gist (Sergej Lotz is a saint for putting this together):  https://gist.github.com/serglo/f9f0be9a66fd6755a0bda85f9c64e85f
 - Create React App:  https://create-react-app.dev/
 - The app icon is licensed from Adobe Stock
-- There are probably 100,000,000,000+ npm depencinces whose authors I simply cannot list here. Feel free to peruse the package-lock.json files if you'd like your brain to melt.
+- There are probably 100,000,000,000+ npm dependencies whose authors I simply cannot list here. Feel free to peruse the package-lock.json files if you'd like your brain to melt.
