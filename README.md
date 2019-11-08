@@ -19,7 +19,7 @@ Whisperas is built from the ground-up to ensure user privacy and security. The t
 - As of now, there is no way for users to delete their accounts on their own...hasn't really been a priority. If it is requested I'll gladly put something together!
 
 ## Credits
-- The dialog, checkboxes, trashcan icon, and info icon are from ANTD:  https://ant.design/
+- The dialogs, checkboxes, trashcan icon, and info icon are from ANTD:  https://ant.design/
 - The other in-app icons are sourced from the Material Design Project:  https://material.io/
 - The card box-shadow css is from this great gist (Sergej Lotz is a saint for putting this together):  https://gist.github.com/serglo/f9f0be9a66fd6755a0bda85f9c64e85f
 - Create React App:  https://create-react-app.dev/
