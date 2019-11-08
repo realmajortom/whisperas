@@ -1,5 +1,7 @@
 # Whisperas : The Pancreas Whisperer
-An app designed to help diabetes track their daily well-being and discover trends over time.
+A mobile portable web app designed to help diabetics track their daily well-being and discover trends over time.
+
+Check it out: https://whisperas.com
 
 ## Introduction
 This app is special to me, because as a Type 1 diabetic myself I've been wanting to produce a tool that can meaningfully benefit other patients in my community. 
