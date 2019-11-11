@@ -13,8 +13,18 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-
 const API_PORT = process.env.API_PORT;
+
+
+// Force https
+app.enable('trust proxy');
+app.use((req, res, next) => {
+	if (req.secure) {
+		next();
+	} else {
+		res.redirect('https://' + req.headers.host + req.url);
+	}
+});
 
 
 // Serve index file
