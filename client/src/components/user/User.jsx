@@ -30,18 +30,15 @@ export default function User() {
   const loginProcedure = (token, prefname) => {
     localStorage.setItem('token', token);
     localStorage.setItem('prefname', prefname);
-
     setRedirect('/');
   };
 
 
   const logout = (e) => {
     e.preventDefault();
-
     localStorage.removeItem('token');
     localStorage.removeItem('prefname');
     localStorage.removeItem('entries');
-
     setRedirect('/');
   };
 
@@ -60,7 +57,6 @@ export default function User() {
             loginProcedure(res.data.token, res.data.prefname);
           } else {
             setMessage(res.data.message);
-
           }
         });
     }
@@ -83,7 +79,6 @@ export default function User() {
             loginProcedure(res.data.token, res.data.prefname);
           } else {
             setMessage(res.data.message);
-
           }
         });
     }
