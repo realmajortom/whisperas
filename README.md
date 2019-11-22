@@ -4,7 +4,7 @@ A portable web app designed to help diabetics track their daily well-being and d
 Check it out: https://whisperas.com
 
 ## Introduction
-Like any chronic illness, managing T1 Diabetes is highly involved and often exhausting. Whisperas aims to simplify patients' lives by helping them visualize the relationships between their treatment regimen and mental well-being.
+Like many chronic illnesses, managing T1 Diabetes is highly involved and often exhausting. Whisperas aims to simplify patients' lives by helping them visualize the relationships between their treatment regimen and mental well-being.
 
 Whisperas is built from the ground-up to ensure user privacy and security. The tool does not require, request, nor record any personally-identifying information; all communications between the client and server are over a secure TLS connection, passwords are never stored in plain-text, and the database itself is encrypted.
 
