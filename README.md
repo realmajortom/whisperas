@@ -8,15 +8,15 @@ This app is special to me, because as a Type 1 diabetic myself I've been wanting
 
 Whisperas is built from the ground-up to ensure user privacy and security. The tool does not require, request, nor record any personally-identifying information; all communications between the client and server are over a secure TLS connection, passwords are never stored in plain-text, and the database itself is encrypted.
 
-## Technologies
-- PWA
+## Tools & Technologies
 - React
 - Node.js + Express
 - MongoDB
 - Google Cloud Platform
+- PWA
 
 ## Upcoming Features & Fixes
-- As of now, there is no way for users to delete their accounts on their own...hasn't really been a priority. If it is requested I'll gladly put something together!
+- Ability for users to delete their accounts
 
 ## Screenshots
 
