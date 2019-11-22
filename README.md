@@ -18,6 +18,83 @@ Whisperas is built from the ground-up to ensure user privacy and security. The t
 ## Upcoming Features & Fixes
 - As of now, there is no way for users to delete their accounts on their own...hasn't really been a priority. If it is requested I'll gladly put something together!
 
+## Screenshots
+
+### Login & Landing
+<kbd>
+  <p></p>
+  <br>
+  &nbsp;
+  <img src="https://thomasg.dev/screenshots/whisperas/login.png" width="300px">
+  &nbsp;&nbsp;
+  <img src="https://thomasg.dev/screenshots/whisperas/home.png" width="300px">
+  &nbsp;
+  <br>
+  <p></p>
+</kbd>
+
+### New Entry
+<kbd>
+  <p></p>
+  <br>
+  &nbsp;
+  <kbd><img src="https://thomasg.dev/screenshots/whisperas/q1.png" width="250px"></kbd>
+  &nbsp;
+  <kbd><img src="https://thomasg.dev/screenshots/whisperas/q2.png" width="250px"></kbd>
+  &nbsp;
+  <kbd><img src="https://thomasg.dev/screenshots/whisperas/q3.png" width="250px"></kbd>
+  &nbsp;
+  <br>
+  <p></p>
+  &nbsp;
+  <kbd><img src="https://thomasg.dev/screenshots/whisperas/q4.png" width="250px"></kbd>
+  &nbsp;
+  <kbd><img src="https://thomasg.dev/screenshots/whisperas/q6.png" width="250px"></kbd>
+  &nbsp;
+  <kbd><img src="https://thomasg.dev/screenshots/whisperas/q8.png" width="250px"></kbd>
+  &nbsp;
+  <br>
+  <p></p>
+</kbd>
+
+### History
+<kbd>
+  <p></p>
+  <br>
+  &nbsp;
+  <img src="https://thomasg.dev/screenshots/whisperas/history.png" width="300px">
+  &nbsp;
+  <img src="https://thomasg.dev/screenshots/whisperas/history_open.png" width="300px">
+  &nbsp;
+  <br>
+  <p></p>
+</kbd>
+
+### Trends
+<kbd>
+  <p></p>
+  <br>
+  &nbsp;
+  <img src="https://thomasg.dev/screenshots/whisperas/trends.png" width="300px">
+  &nbsp;
+  <br>
+  <p></p>
+</kbd>
+
+### Preferences & Resources
+<kbd>
+  <p></p>
+  <br>
+  &nbsp;
+  <img src="https://thomasg.dev/screenshots/whisperas/preferences.png" width="300px">
+  &nbsp;
+  <img src="https://thomasg.dev/screenshots/whisperas/resources.png" width="300px">
+  &nbsp;
+  <br>
+  <p></p>
+</kbd>
+
+
 ## Credits
 - The dialogs, checkboxes, trashcan icon, and info icon are from ANTD:  https://ant.design/
 - The other in-app icons are sourced from the Material Design Project:  https://material.io/
