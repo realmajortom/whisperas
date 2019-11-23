@@ -9,10 +9,10 @@ export default function InfoModal() {
     maskStyle: {backgroundColor: 'rgba(0,0,0,.7)'},
     content: (
       <div className='Modal'>
-        <p>The selected time period indicates how many recent entries to included in the calculations. For example, selecting "7 Days" will base trend calculations on the 7 most-recent entries.</p>
-        <p>When making an entry, each of the 5 emojis correlates to a  value (or score) between 1 & 5. The Health and General emojis below represent the average scores during the chosen period of time.</p>
-        <p>The items listed under Wins, Setbacks, and Treatment Changes are determined by your most frequent selections. All options sharing the same high frequency are listed.</p>
-        <p>Best and Worst days are determined by calculating your average entered score for each day of the week, then finding the highest and lowest scoring days.</p>
+        <p>The selected time period determines how many recent entries to include in the trend calculations, so missing days are ignored.</p>
+        <p>When making an entry, each of the emojis corresponds to a score between 1 & 5. An average of those scores is used to pick the emojis shown here.</p>
+        <p>The items listed under Wins, Setbacks, and Treatment Changes are the most frequently occuring selections in their respective categories.</p>
+        <p>To pick your best and worst days an average score is calculated for each day of the week; the 7 averages are then sorted to find the highest and lowest scoring days.</p>
       </div>
     ),
     onOk() {}

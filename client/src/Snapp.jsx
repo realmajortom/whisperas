@@ -33,9 +33,12 @@ export default function Snapp() {
 
       <h2 style={styles.h2}>Discover trends in your daily diabetes health</h2>
 
-      <p style={styles.p}>Whisperas is a portable web app designed for your mobile device.<br />Please go to https://whisperas.com on your phone to experience The Pancreas Whisperer.</p>
+      <p style={styles.p}>Whisperas is a portable web app designed for your mobile device :)</p>
 
-      <p style={styles.p2}>A desktop client is in development!</p>
+      <div style={{display: 'flex', flexFlow: 'column nowrap', alignItems: 'center', marginTop: '60px'}}>
+        <img src={require('./img/whisperas-qr.png')} alt='QR Code' />
+        <span style={{fontSize: '14pt', marginTop: '20px'}}>Scan the QR code with your phone to quickly visit https://whisperas.com</span>
+      </div>
 
     </div>
   )
