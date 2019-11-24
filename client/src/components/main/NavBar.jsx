@@ -11,9 +11,9 @@ export default function NavBar(props) {
 
   const [morphType, setMorphType] = useState('plus');
 
-  const navStyle = {
-    top: `${window.innerHeight - 50}px`
-  };
+  // const navStyle = {
+  //   top: `${window.innerHeight - 50}px`
+  // };
 
 
   useEffect(() => {
@@ -35,7 +35,7 @@ export default function NavBar(props) {
 
 
   return (
-    <div className='NavBar' style={navStyle}>
+    <div className='NavBar'>
 
       <Link to='/history'>
         <img src={require('../../img/nav/cal.svg')} className='navIcn' alt='View History' />

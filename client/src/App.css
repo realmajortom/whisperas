@@ -34,6 +34,7 @@ h1 {
 /**************** Nav Bar ****************/
 .NavBar {
   position: fixed;
+  bottom: 0;
   width: 100vw;
   height: 50px;
   border-top: 1px solid rgb(230, 230, 230);
@@ -42,6 +43,13 @@ h1 {
   align-items: center;
   justify-content: space-around;
   background-color: white;
+}
+
+@supports(padding: max(0px)) {
+    .NavBar {
+        padding-bottom: 20px;
+        height: 60px;
+    }
 }
 
 .navBtn {
@@ -573,7 +581,7 @@ circle:active {
 }
 
 .prefsFoot {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     height: 100px;
     display: flex;
     flex-flow: column nowrap;
@@ -589,6 +597,10 @@ circle:active {
   margin: 0;
 }
 
+.prefsTile:first-of-type {
+  margin-top: 0;
+}
+
 .Prefs {
   height: calc(100vh - 130px);
   display: flex;
@@ -599,9 +611,6 @@ circle:active {
 
 
 /**************** Resources Page ****************/
-.Resources {
-
-}
 .resourceMsg {
   font-family: 'Inter-var', sans-serif;
   white-space: pre-wrap;
@@ -631,6 +640,13 @@ circle:active {
   margin-bottom: 50px;
 }
 
+@media (max-height: 600px) {
+  .prefsFoot {
+    margin-bottom: 0;
+    height: 80px;
+  }
+}
+
 @media(max-width: 359px) {
   .footWrapUser {
     margin-bottom: 20px;
@@ -649,5 +665,11 @@ circle:active {
   }
   p {
     font-size: 12px;
+  }
+}
+
+@media(max-height: 560px) {
+  .NavBar, .prefsFoot {
+    display: none;
   }
 }
