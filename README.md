@@ -13,7 +13,7 @@ Whisperas is built from the ground-up to ensure user privacy and security. The t
 - Node.js
 - Express
 - MongoDB
-- Google Cloud Platform
+- Google Cloud App Engine
 - PWA
 
 ## Upcoming Features & Fixes
