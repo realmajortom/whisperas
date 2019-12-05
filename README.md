@@ -50,9 +50,9 @@ Whisperas is built from the ground-up to ensure user privacy and security. The t
   &nbsp;
   <kbd><img src="https://thomasg.dev/screenshots/whisperas/q4.png" width="250px"></kbd>
   &nbsp;
-  <kbd><img src="https://thomasg.dev/screenshots/whisperas/q6.png" width="250px"></kbd>
+  <kbd><img src="https://thomasg.dev/screenshots/whisperas/treatment.png" width="250px"></kbd>
   &nbsp;
-  <kbd><img src="https://thomasg.dev/screenshots/whisperas/q8.png" width="250px"></kbd>
+  <kbd><img src="https://thomasg.dev/screenshots/whisperas/comments.png" width="250px"></kbd>
   &nbsp;
   <br>
   <p></p>
