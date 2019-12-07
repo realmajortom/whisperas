@@ -1,5 +1,5 @@
 # Whisperas : The Pancreas Whisperer
-A portable web app designed to help diabetics track their daily well-being and discover trends over time.
+Progressive Web App designed to help diabetics track their daily well-being and discover trends over time.
 
 Check it out: https://whisperas.com
 
@@ -9,12 +9,15 @@ Like many chronic illnesses, managing T1 Diabetes is highly involved and often e
 Whisperas is built from the ground-up to ensure user privacy and security. The tool does not require, request, nor record any personally-identifying information; all communications between the client and server are over a secure TLS connection, passwords are never stored in plain-text, and the database itself is encrypted.
 
 ## Tools & Technologies
+- JavaScript
+- HTML
+- CSS
 - React
 - Node.js
 - Express
 - MongoDB
-- Google Cloud App Engine
-- PWA
+- Google App Engine
+- REST APIs
 
 ## Upcoming Features & Fixes
 - Ability for users to delete their accounts
