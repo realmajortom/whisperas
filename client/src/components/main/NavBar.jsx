@@ -11,10 +11,6 @@ export default function NavBar(props) {
 
   const [morphType, setMorphType] = useState('plus');
 
-  // const navStyle = {
-  //   top: `${window.innerHeight - 50}px`
-  // };
-
 
   useEffect(() => {
     if (location !== '/entry') {
