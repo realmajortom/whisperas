@@ -45,7 +45,7 @@ h1 {
   background-color: white;
 }
 
-@supports(padding: max(0px)) {
+@supports(-webkit-overflow-scrolling: touch) {
     .NavBar {
         padding-bottom: 20px;
         height: 60px;

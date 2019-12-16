@@ -26,14 +26,14 @@ app.get('/_ah/warmup', (req, res) => {
 
 
 // https upgrade - disable in App Engine Standard Env
-// app.enable('trust proxy');
-// app.use((req, res, next) => {
-// 	if (req.secure) {
-// 		next();
-// 	} else {
-// 		res.redirect('https://' + req.headers.host + req.url);
-// 	}
-// });
+app.set('trust proxy', true);
+app.use((req, res, next) => {
+	if (req.secure) {
+		next();
+	} else {
+		res.redirect('https://' + req.headers.host + req.url);
+	}
+});
 
 
 app.use(express.static(path.join(__dirname, 'build')));
