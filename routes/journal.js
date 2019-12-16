@@ -69,6 +69,7 @@ router.post('/delete/:id', (req, res) => {
 					return res.json({message: "It appears that you haven't made an entries yet!", success: false});
 				} else {
 					doc.entries.id(req.params.id).remove();
+
 					doc.save((err, doc) => {
 						if (err) {
 							return res.json({message: 'An error occurred. Please try again.', success: false});

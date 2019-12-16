@@ -8,7 +8,7 @@ const opts = {
 	secretOrKey: process.env.JWT_SECRET,
 	jwtFromRequest: ExtractJwt.fromAuthHeaderWithScheme('JWT'),
 	jsonWebTokenOptions: {
-		maxAge: '30d'
+		maxAge: '90d'
 	}
 }
 
