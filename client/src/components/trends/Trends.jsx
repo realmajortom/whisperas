@@ -28,7 +28,7 @@ export default function Trends() {
   useEffect(() => {
 
     if (token !== null) {
-      axios.get('https://whisperas.appspot.com/api/journal/my-entries',
+      axios.get('https://whisperas.com/api/journal/my-entries',
         {headers: {Authorization: `JWT ${token}`}})
         .then(res => {
           if (res.data.success) {
@@ -75,7 +75,7 @@ export default function Trends() {
 
 
   const getAvg = (h, type, set) => {
-    
+
     let scrs = [];
 
     for (let i = 0; i < h.length; i++) {

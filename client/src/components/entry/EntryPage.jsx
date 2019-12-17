@@ -57,7 +57,7 @@ export default function EntryPage(props) {
     const day = today.getDay();
 
     if (token !== null) {
-      axios.post('https://whisperas.appspot.com/api/journal/submit', {
+      axios.post('https://whisperas.com/api/journal/submit', {
         dmy: `${date}-${month}-${year}`,
         date: date,
         month: month,

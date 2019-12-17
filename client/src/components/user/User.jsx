@@ -51,7 +51,7 @@ export default function User() {
     } else if (passLog.length < 8 || passLog.length > 60) {
       setMessage('Hint: Your password contains between 8 & 60 characters :)');
     } else {
-      axios.post('https://whisperas.appspot.com/api/user/login',
+      axios.post('https://whisperas.com/api/user/login',
         {username: userLog, pass: passLog}).then(res => {
           if (res.data.success) {
             loginProcedure(res.data.token, res.data.prefname);
@@ -73,7 +73,7 @@ export default function User() {
     } else if (passReg.length < 8 || passReg.length > 60) {
       setMessage('Password must contain between 8 & 60 characters');
     } else {
-      axios.post('https://whisperas.appspot.com/api/user/register',
+      axios.post('https://whisperas.com/api/user/register',
         {prefname: prefname, username: userReg, pass: passReg}).then(res => {
           if (res.data.success) {
             loginProcedure(res.data.token, res.data.prefname);

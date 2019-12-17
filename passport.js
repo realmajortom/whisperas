@@ -2,6 +2,7 @@ require('dotenv').config();
 const passport = require('passport');
 const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
+
 const User = require('./models/userModel');
 
 const opts = {
@@ -10,7 +11,7 @@ const opts = {
 	jsonWebTokenOptions: {
 		maxAge: '90d'
 	}
-}
+};
 
 passport.use('jwt', new JwtStrategy(opts, (jwt_payload, done) => {
 	User.findById(jwt_payload.sub, (err, user) => {

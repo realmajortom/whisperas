@@ -39,6 +39,12 @@ app.use((req, res, next) => {
 app.use(express.static(path.join(__dirname, 'build')));
 
 
+app.use(cors());
+app.use(helmet());
+app.use(morgan('dev'));
+app.use(bodyParser.json());
+
+
 const regLimiter = rateLimit({
 	windowMs: 60 * 60 * 1000, // 60m
 	max: 10
@@ -57,12 +63,6 @@ const journalLimiter = rateLimit({
 app.use('/api/user/register', regLimiter);
 app.use('/api/user', userLimiter);
 app.use('/api/journal', journalLimiter);
-
-
-app.use(cors());
-app.use(helmet());
-app.use(morgan('dev'));
-app.use(bodyParser.json());
 
 
 app.use('/api/user', userRoutes);

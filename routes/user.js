@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -24,9 +25,12 @@ router.post('/register', (req, res) => {
 		User.findOne({username: req.body.username}, (err, user) => {
 			if (err) {
 				res.json({message: genErrMsg, success: false});
+
 			} else if (user) {
 				res.json({message: 'Username already taken', success: false});
+
 			} else {
+
 				bcrypt.hash(req.body.pass, 12, (err, hash) => {
 					if (err) {
 						res.json({message: genErrMsg, success: false});
@@ -85,7 +89,7 @@ router.post('/login', (req, res) => {
 
 						const token = jwt.sign({
 							sub: user._id,
-						}, process.env.JWT_SECRET, {expiresIn: '30d'});
+						}, process.env.JWT_SECRET, {expiresIn: '90d'});
 
 						res.json({token: token, prefname: user.prefname, success: true});
 					}
@@ -162,6 +166,7 @@ router.post('/update-pn', (req, res) => {
 });
 
 router.post('/update-pass', (req, res) => {
+
 	if (req.body.newPass.length < 8 || req.body.newPass.length > 60) {
 		res.json({message: 'Password must contain between 8 & 60 characters :)', success: false});
 	} else {

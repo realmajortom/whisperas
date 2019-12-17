@@ -16,7 +16,7 @@ export default function History() {
   useEffect(() => {
 
     if (token !== null) {
-      axios.get('https://whisperas.appspot.com/api/journal/my-entries',
+      axios.get('https://whisperas.com/api/journal/my-entries',
         {headers: {Authorization: `JWT ${token}`}})
         .then(res => {
           if (res.data.success) {
