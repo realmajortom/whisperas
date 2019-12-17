@@ -1,19 +1,36 @@
+require('@google-cloud/trace-agent').start();
+require('@google-cloud/profiler').start();
+require('@google-cloud/debug-agent').start();
+
 require('dotenv').config();
 const cors = require('cors');
+const path = require('path');
 const helmet = require('helmet');
-const morgan = require('morgan');
+const express = require('express');
+const winston = require('winston');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const rateLimit = require("express-rate-limit");
+const {LoggingWinston} = require('@google-cloud/logging-winston');
+
 const userRoutes = require('./routes/user');
 const journalRoutes = require('./routes/journal');
 
-const express = require('express');
-const path = require('path');
 
 const app = express();
-
 const PORT = process.env.PORT;
+
+
+const loggingWinston = new LoggingWinston();
+const logger = winston.createLogger({
+	level: 'info',
+	transports: [
+		new winston.transports.Console(),
+		loggingWinston
+	],
+});
+logger.error('Winston error!');
+logger.info('Winston info');
 
 
 mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true}).catch(error => console.log(`Initial connection error: ${{error}}`));
@@ -38,7 +55,6 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 app.use(cors());
 app.use(helmet());
-app.use(morgan('dev'));
 app.use(bodyParser.json());
 
 
