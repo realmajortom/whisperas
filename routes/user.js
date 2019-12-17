@@ -69,22 +69,29 @@ router.post('/register', (req, res) => {
 // login existing user
 router.post('/login', (req, res) => {
 	if (req.body.username.length < 4 || req.body.username.length > 60) {
-		res.json({message: 'Hint: Your username contains between 4 & 60 characters :)', success: false})
+		res.json({message: 'Hint: Your username contains between 4 & 60 characters :)', success: false});
+
 	} else if (req.body.pass.length < 8 || req.body.pass.length > 60) {
 		res.json({message: 'Hint: Your password contains between 8 & 60 characters :)', success: false});
+
 	} else {
 
 		User.findOne({username: req.body.username}, (err, user) => {
 			if (err) {
 				res.json({message: genErrMsg, success: false});
+
 			} else if (!user) {
 				res.json({message: 'Invalid username', success: false});
+
 			} else {
+
 				bcrypt.compare(req.body.pass, user.password, (err, response) => {
 					if (err) {
 						res.json({message: genErrMsg, success: false});
+
 					} else if (response === false) {
 						res.json({message: 'Incorrect password', success: false});
+
 					} else {
 
 						const token = jwt.sign({

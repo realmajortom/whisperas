@@ -16,13 +16,10 @@ const app = express();
 const PORT = process.env.PORT;
 
 
-// Warmup route for App Engine scaling
-app.get('/_ah/warmup', (req, res) => {
-	mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true}).catch(error => console.log(`Initial connection error: ${{error}}`));
-	const db = mongoose.connection;
-	db.once('open', () => console.log('Successfully connected to database'));
-	db.on('error', err => console.error.bind(console, `Database runtime error: ${err}`));
-});
+mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true}).catch(error => console.log(`Initial connection error: ${{error}}`));
+const db = mongoose.connection;
+db.once('open', () => console.log('Successfully connected to database'));
+db.on('error', err => console.error.bind(console, `Database runtime error: ${err}`));
 
 
 // https upgrade - disable in App Engine Standard Env
@@ -52,7 +49,7 @@ const regLimiter = rateLimit({
 
 const userLimiter = rateLimit({
 	windowMs: 60 * 60 * 1000, // 60m
-	max: 60
+	max: 100
 });
 
 const journalLimiter = rateLimit({
